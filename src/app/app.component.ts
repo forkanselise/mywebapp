@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonService } from './service/common.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogboxComponent } from './dialogbox/dialogbox.component';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -37,14 +40,31 @@ export class AppComponent {
     }
   ];
 
+  videoInformation = this.fb.group({
+    Title: [''],
+    VideoUrl: [''],
+    Description: ['']
+  });
+
   currentIndex = 0;
   activeVideo = this.playlist[this.currentIndex];
   api!: { getDefaultMedia: () => { (): any; new(): any; subscriptions: { (): any; new(): any; loadedMetadata: { (): any; new(): any; subscribe: { (arg0: () => void): void; new(): any; }; }; ended: { (): any; new(): any; subscribe: { (arg0: () => void): void; new(): any; }; }; }; }; play: () => void; };
 
   constructor(
-    private commonService: CommonService
+    private commonService: CommonService,
+    private dialog: MatDialog,
+    private fb: FormBuilder
   ) {
-    this.dataLoad()
+    this.dataLoad();
+    // this.openDialog()
+  }
+
+  addVideoInfo() {
+    this.commonService.postData(this.videoInformation.value)
+  }
+
+  openDialog() {
+    this.dialog.open(DialogboxComponent,{})
   }
 
   dataLoad() {

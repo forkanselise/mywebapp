@@ -14,4 +14,8 @@ export class CommonService {
     return this.http.get('http://localhost:3000/videos');
   }
 
+  postData(data: any) {
+    return this.http.post('http://localhost:3000/videos', data)
+  }
+
 }
