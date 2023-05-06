@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from './service/common.service';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +41,16 @@ export class AppComponent {
   activeVideo = this.playlist[this.currentIndex];
   api!: { getDefaultMedia: () => { (): any; new(): any; subscriptions: { (): any; new(): any; loadedMetadata: { (): any; new(): any; subscribe: { (arg0: () => void): void; new(): any; }; }; ended: { (): any; new(): any; subscribe: { (arg0: () => void): void; new(): any; }; }; }; }; play: () => void; };
 
-  constructor() {
+  constructor(
+    private commonService: CommonService
+  ) {
+    this.dataLoad()
+  }
+
+  dataLoad() {
+    this.commonService.getData().subscribe(res => {
+      console.log(res);
+    })
   }
 
   onPlayerSet(api: any) {
