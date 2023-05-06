@@ -2,6 +2,33 @@
 body {
   background-color: #454343;
 }
+.container-box {
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.player-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.player-title {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+
+}
+
+.player-body {
+  /* border: 1px solid red; */
+  width: 30%;
+  margin: 30px;
+}
+
+.add-btn {
+  padding-inline: 20px;
+}
 .player-wrapper {
   max-width: 500px;
   margin: auto;

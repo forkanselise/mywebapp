@@ -10,19 +10,29 @@ export class AppComponent {
 
   playlist = [
     {
-      title: 'Agent 327!',
-      src: 'https://media.vimejs.com/720p.mp4',
-      type: 'video/mp4'
+      Title: 'Agent 327!',
+      VideoUrl: 'https://media.vimejs.com/720p.mp4',
+      Description: 'video/mp4'
     },
     {
-      title: 'Big Buck Bunny',
-      src: 'http://static.videogular.com/assets/videos/big_buck_bunny_720p_h264.mov',
-      type: 'video/mp4'
+      Title: 'Agent 327!',
+      VideoUrl: 'https://media.vimejs.com/720p.mp4',
+      Description: 'video/mp4'
     },
     {
-      title: 'Messi Goal',
-      src: 'http://static.videogular.com/assets/videos/goal-2.mp4',
-      type: 'video/mp4'
+      Title: 'Agent 327!',
+      VideoUrl: 'https://media.vimejs.com/720p.mp4',
+      Description: 'video/mp4'
+    },
+    {
+      Title: 'Agent 327!',
+      VideoUrl: 'https://media.vimejs.com/720p.mp4',
+      Description: 'video/mp4'
+    },
+    {
+      Title: 'Agent 327!',
+      VideoUrl: 'https://media.vimejs.com/720p.mp4',
+      Description: 'video/mp4'
     }
   ];
 
@@ -54,7 +64,7 @@ export class AppComponent {
     this.api.play();
   }
 
-  onClickPlaylistVideo(item: { title: string; src: string; type: string; }, index: number) {
+  onClickPlaylistVideo(item: { Title: string; VideoUrl: string; Description: string; }, index: number) {
     this.currentIndex = index;
     this.activeVideo = item;
   }

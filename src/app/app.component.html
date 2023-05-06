@@ -1,39 +1,47 @@
-<div>
-  <h3>Basic Video Player</h3>
-  <vg-player>
-    <vg-overlay-play></vg-overlay-play>
-    <vg-buffering></vg-buffering>
+<div class="container-box">
+  <div style="display: flex; justify-content: space-between;">
+    <h3>Basic Video Player</h3>
+    <button class="add-btn">Add Video Info</button>
+  </div>
+  <div class="player-container">
+    <div class="player-body" *ngFor="let item of playlist index as i">
+      <div class="player-title">{{i+1}}.{{item.Title}}</div>
+      <vg-player class="player-box">
+        <vg-overlay-play></vg-overlay-play>
+        <vg-buffering></vg-buffering>
 
-    <vg-scrub-bar>
-        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-    </vg-scrub-bar>
+        <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+        </vg-scrub-bar>
 
-    <vg-controls>
-        <vg-play-pause></vg-play-pause>
-        <vg-playback-button></vg-playback-button>
+        <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
 
-        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
-        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
 
-        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
 
-        <vg-track-selector></vg-track-selector>
-        <vg-mute></vg-mute>
-        <vg-volume></vg-volume>
+            <vg-track-selector></vg-track-selector>
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
 
-        <vg-fullscreen></vg-fullscreen>
-    </vg-controls>
+            <vg-fullscreen></vg-fullscreen>
+        </vg-controls>
 
-    <video [vgMedia]="$any(media)" #media [src]="activeVideo.src" id="singleVideo" preload="auto" crossorigin>
-    </video>
-</vg-player>
-<ul>
+        <video [vgMedia]="$any(media)" #media [src]="item.VideoUrl" id="singleVideo" preload="auto" crossorigin>
+        </video>
+      </vg-player>
+    </div>
+  </div>
+<!-- <ul>
   <li class="playlist-item" *ngFor="let video of playlist; let $index = index"
     (click)="onClickPlaylistVideo(video, $index)" [class.selected]="video === activeVideo">
     {{ video.title }}
   </li>
-</ul>
+</ul> -->
 </div>
