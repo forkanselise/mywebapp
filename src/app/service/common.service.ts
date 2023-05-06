@@ -11,11 +11,12 @@ export class CommonService {
   ) { }
 
   getData() {
-    return this.http.get('http://localhost:3000/videos');
+    return this.http.get<any>('http://localhost:3000/videos');
   }
 
   postData(data: any) {
-    return this.http.post('http://localhost:3000/videos', data)
+    console.log(data)
+    return this.http.post<any>('http://localhost:3000/videos', data);
   }
 
 }

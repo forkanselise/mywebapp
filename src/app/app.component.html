@@ -1,10 +1,10 @@
 <div class="container-box">
   <div style="display: flex; justify-content: space-between;">
     <h3>Basic Video Player</h3>
-    <div style="display: flex; flex-direction: column; height: 120px; justify-content: space-between;">
-      <input style="height: 30px" type="text" placeholder="Title">
-      <input style="height: 30px" type="text" placeholder="Url">
-      <button style="height: 30px" class="add-btn">Add Video Info</button>
+    <div [formGroup]="videoInformation" style="display: flex; flex-direction: column; height: 120px; justify-content: space-between;">
+      <input formControlName="Title" style="height: 30px" type="text" placeholder="Title">
+      <input formControlName="VideoUrl" style="height: 30px" type="text" placeholder="Url">
+      <button (click)="addVideoInfo()" style="height: 30px" class="add-btn">Add Video Info</button>
     </div>
   </div>
   <div class="player-container">

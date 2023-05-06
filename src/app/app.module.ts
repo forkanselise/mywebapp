@@ -9,8 +9,8 @@ import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogboxComponent } from './dialogbox/dialogbox.component';
-import { MatDialogModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     VgOverlayPlayModule,
     VgBufferingModule,
     HttpClientModule,
-    MatDialogModule,
     ReactiveFormsModule,
+    MatDialogModule,
     FormsModule
 
   ],

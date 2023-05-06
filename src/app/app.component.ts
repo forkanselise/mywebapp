@@ -60,7 +60,9 @@ export class AppComponent {
   }
 
   addVideoInfo() {
-    this.commonService.postData(this.videoInformation.value)
+    console.log(this.videoInformation.value)
+    this.commonService.postData(this.videoInformation.value).subscribe();
+    this.dataLoad()
   }
 
   openDialog() {
@@ -70,6 +72,7 @@ export class AppComponent {
   dataLoad() {
     this.commonService.getData().subscribe(res => {
       console.log(res);
+      this.playlist = res
     })
   }
 
